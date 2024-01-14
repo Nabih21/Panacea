@@ -9,7 +9,7 @@ import axios from 'axios';
 const RegisterScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const nav = useNavigation();
+    const navigation = useNavigation();
     const [isLoading, setIsLoading] = useState(false);
 
 
@@ -78,25 +78,27 @@ const RegisterScreen = () => {
                 </View>
 
 
-                <View style={{ marginTop: 10 }}>
+                
+            </KeyboardAvoidingView>
+            <View style={ styles.buttonContainer }>
                     { isLoading ? 
                     <ActivityIndicator  size="large" color="#0000ff"/> 
             
                     :
                     <Pressable
                         onPress={handleRegister}
+                        style={styles.button}
                     >
                         <Text> register </Text>
                     </Pressable>}
                 </View>
                 <View style={{ marginTop: 10 }}>
                     <Pressable
-                        onPress={() => nav.navigate("Login")}
+                        onPress={() => navigation.navigate("Login")}
                     >
                         <Text> go to login </Text>
                     </Pressable>
                 </View>
-            </KeyboardAvoidingView>
         </SafeAreaView>
     )
 }
@@ -133,5 +135,32 @@ const styles = StyleSheet.create({
         fontSize: 16,
 
     },
+
+    //buttons style
+    buttonContainer : {
+        padding: 10, 
+        margin: 8,
+     
+      },
+    button: {
+        padding: 10,
+        borderWidth:0,
+        margin: 12, 
+        width: 300,
+        height: 45,
+        backgroundColor: 'green',
+        borderRadius: 8,
+
+
+      },
+    buttonText: {
+        textAlign: 'center',
+        color: 'white',
+        //fontFamily: 'calibri',
+        fontSize: 18,
+        fontWeight:'600',
+        
+      },
+      
 
 });
