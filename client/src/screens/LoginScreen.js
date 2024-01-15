@@ -82,18 +82,22 @@ const LoginScreen = () => {
           </View>
         </View>
 
-        <View style={{ marginTop: 10 }}>
+        <View style={styles.buttonContainer}>
           <Pressable
             onPress={handleLogin}
+            style={styles.button}
           >
-            <Text> Login </Text>
+            <Text style={styles.buttonText}> Login </Text>
           </Pressable>
         </View>
-        <View style={{ marginTop: 10 }}>
+
+        <View style={{ marginTop: 50 }}>
+
+          <Text style={styles.regularText}> Don't have an account yet? </Text>
           <Pressable
             onPress={() => nav.navigate("Register")}
           >
-            <Text> go to register </Text>
+            <Text style={styles.hyperLinkText}> Sign up </Text>
           </Pressable>
         </View>
 
@@ -134,5 +138,46 @@ const styles = StyleSheet.create({
     fontSize: 16,
 
   },
+
+  //buttons style
+  buttonContainer : {
+    padding: 10, 
+    margin: 8,
+ 
+  },
+button: {
+    padding: 10,
+    borderWidth:0,
+    margin: 12, 
+    width: 300,
+    height: 45,
+    backgroundColor: 'green',
+    borderRadius: 8,
+
+
+  },
+buttonText: {
+    textAlign: 'center',
+    color: 'white',
+    //fontFamily: 'calibri',
+    fontSize: 18,
+    fontWeight:'600',
+    
+  },
+regularText: {
+    fontSize: 18,
+    color: 'black',
+    fontWeight: '500',
+    textAlign: 'center',
+},
+
+hyperLinkText: {
+    fontSize: 18,
+    color: 'green',
+    fontWeight: '500',
+    textDecorationLine: 'underline',
+    textAlign: 'center',
+
+}
 
 });

@@ -89,14 +89,16 @@ const RegisterScreen = () => {
                         onPress={handleRegister}
                         style={styles.button}
                     >
-                        <Text> register </Text>
+                        <Text style={styles.buttonText} > Register </Text>
                     </Pressable>}
                 </View>
-                <View style={{ marginTop: 10 }}>
+                <View style={{ marginTop: 50 }}>
+
+                    <Text style={styles.regularText}> Already have an account? </Text>
                     <Pressable
                         onPress={() => navigation.navigate("Login")}
                     >
-                        <Text> go to login </Text>
+                        <Text style={styles.hyperLinkText}> Sign in to your account </Text>
                     </Pressable>
                 </View>
         </SafeAreaView>
@@ -161,6 +163,20 @@ const styles = StyleSheet.create({
         fontWeight:'600',
         
       },
-      
+    regularText: {
+        fontSize: 18,
+        color: 'black',
+        fontWeight: '500',
+        textAlign: 'center',
+    },
+
+    hyperLinkText: {
+        fontSize: 18,
+        color: 'green',
+        fontWeight: '500',
+        textDecorationLine: 'underline',
+        textAlign: 'center',
+
+    }
 
 });
